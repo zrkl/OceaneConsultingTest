@@ -1,0 +1,80 @@
+﻿@model JobPortal.DBContext.CandidatEntity
+
+@{
+
+    Layout = "_Layout";
+}
+<div class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 mb-5">
+                <form method="post" enctype="multipart/form-data" class="p-5 bg-white">
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Nom</label>
+                            <input type="text" class="form-control" asp-for="Nom">
+                            <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Prenom</label>
+                            <input type="text" class="form-control" asp-for="Prenom">
+                            <span asp-validation-for="Prenom" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Mail</label>
+                            <input type="text" class="form-control" asp-for="Mail">
+                            <span asp-validation-for="Mail" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Telephone</label>
+                            <input type="text" class="form-control" asp-for="Telephone">
+                            <span asp-validation-for="Telephone" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Niveau d'etude</label>
+                            <input type="text" class="form-control" asp-for="NiveauEtude">
+                            <span asp-validation-for="NiveauEtude" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Nombre Annees Experience</label>
+                            <input type="number" class="form-control" asp-for="NombreAnneesExperience">
+                            <span asp-validation-for="NombreAnneesExperience" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >Dernier Employeur</label>
+                            <input type="text" class="form-control" asp-for="DernierEmployeur">
+                            <span asp-validation-for="DernierEmployeur" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="font-weight-bold" >C.V.</label>
+                            <input type="file" id="cvFile" name="cvFile" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Post" class="btn btn-primary  py-2 px-5">
+                            <a type="button" asp-action="Index">Back to List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

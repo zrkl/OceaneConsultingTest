@@ -1,0 +1,38 @@
+﻿@model JobPortal.Controllers.RecruiterController.login
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .center-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+    }
+</style>
+<div class="center-screen">
+    <form method="post">
+        <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+                <label  class="font-weight-bold" >Login : Admin</label>
+                <input asp-for="_login" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" >Password : 12345</label>
+                <input asp-for="_password" type="password" class="form-control">
+            </div>
+        </div>
+        <div>
+            <label class="font-weight-bold" style="color:red">@ViewData["error"]</label>
+        </div>
+        <input type="submit" value="Post" class="btn btn-primary  py-2 px-5">
+        
+    </form>
+</div>
+<div>
+    <a class="btn btn-info  py-2 px-5" asp-action="Home/Index">Back to Home</a>
+</div>
